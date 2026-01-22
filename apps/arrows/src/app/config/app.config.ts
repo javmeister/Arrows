@@ -1,10 +1,24 @@
-import {
-  ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-} from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { routes } from './app.routes';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBCy0uxZRR41EH2whU80ZrsXvyJlyYHP_o",
+  authDomain: "arrows-online.firebaseapp.com",
+  projectId: "arrows-online",
+  storageBucket: "arrows-online.firebasestorage.app",
+  messagingSenderId: "307554263324",
+  appId: "1:307554263324:web:a07bb4c99440919f309ad9",
+  measurementId: "G-Y4LV8THQ5S"
+};
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideBrowserGlobalErrorListeners(), provideRouter(appRoutes)],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
+  ],
 };
