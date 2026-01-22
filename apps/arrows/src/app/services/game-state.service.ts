@@ -9,9 +9,9 @@ export class GameStateService implements OnDestroy {
   private readonly highestLevelCompleted = signal<number>(0);
 
   private auth: Auth = inject(Auth);
-  public user$ = user(this.auth);
 
-  public authState$ = authState(auth);
+  public user$ = user(this.auth);
+  public authState$ = authState(this.auth);
 
   private authStateSubscription: Subscription;
   private userSubscription: Subscription;
