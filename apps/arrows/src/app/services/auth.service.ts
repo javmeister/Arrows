@@ -44,15 +44,14 @@ export class AuthService implements OnDestroy {
 
   private getUserGameProfile(theUser: User) {
     runInInjectionContext(this.environmentInjector, () => {
-      inject(Firestore); // Do what you need with the injected service
-
       const userProfileDocReference = doc(this.firestore, 'users', theUser.uid);
 
       // e.g., fetch user profile from Firestore and update local state
       getDoc(userProfileDocReference).then((userProfileDoc) => {
         if (userProfileDoc.exists()) {
           const userGameProfile = userProfileDoc.data() as UserGameProfile;
-          console.log('User Game Profile:', userGameProfile);
+
+          // console.log('User Game Profile:', userGameProfile);
 
           // Update the game state signals
           this.gameState.currentLevel.set(userGameProfile.currentLevel);
