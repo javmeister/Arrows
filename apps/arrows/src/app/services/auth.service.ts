@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Auth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, AuthError } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root',

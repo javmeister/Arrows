@@ -20,7 +20,9 @@
             "input": "apps/arrows/public"
           }
         ],
-        "styles": ["apps/arrows/src/styles.scss"]
+        "styles": [
+          "apps/arrows/src/styles.scss"
+        ]
       },
       "configurations": {
         "production": {

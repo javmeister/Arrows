@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../../../node_modules/@shoelace-style/shoelace/dist/themes/dark.css';
+
+@use './styles/global';
+@use './styles/buttons';
+@use './styles/animations';
+
+@use './styles/variables';
